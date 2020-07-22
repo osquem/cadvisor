@@ -9,6 +9,8 @@ cadvisor:
       - /var/lib/docker:/var/lib/docker:ro
       - /dev/disk/:/dev/disk:ro
       - /cgroup:/cgroup:ro #doesn't work on MacOS only for Linux
+    devices:
+      - /dev/kmsg:/dev/kmsg
     restart: always
     ports:
       - 8184:8080
